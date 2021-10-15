@@ -1,0 +1,11 @@
+begin
+x = 1;
+y = x + 5;
+while (x < y) do
+	x = x + 1;
+od
+if (x == y) then 
+    x = 9;
+    else x = 0;
+fi
+end 
