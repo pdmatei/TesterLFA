@@ -1,3 +1,2 @@
-Single simple token
-SPACE ' '
-ZEROS 0+
+ONE 1;
+ZEROS 00*;
