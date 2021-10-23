@@ -1,11 +1,11 @@
-SPACE  
+C c
 BS bbb
 ABS ab
-SPACE  
+C c
 ABS ab
 BS b
 ABS ab
-SPACE  
+C c
 BS bb
-SPACE  
+C c
 ABS ababab

@@ -1,4 +1,3 @@
-Two simple tokens
-SPACE ' '
-ABS (ab)+
-BS b*
+C c;
+ABS (ab)+;
+BS b*;
