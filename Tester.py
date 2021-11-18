@@ -16,12 +16,12 @@ def run_test(test_set, test):
     foutput = TESTER_DIR + "T{}/".format(stage) + test_set + "/out/" + test_set + '.' + test + ".out"
     freference = TESTER_DIR + "T{}/".format(stage) + test_set + "/ref/" + test_set + '.' + test + ".ref"
 
-    '''
-    print(lexer)
-    print(finput)
-    print(foutput)
-    print(freference)
-    '''
+    if not os.path.exists(os.path.dirname(foutput)):
+        try:
+            os.makedirs(os.path.dirname(foutput))
+        except OSError as exc:
+            if exc.errno != errno.EEXIST:
+                raise
 
     runlexer(lexer, finput, foutput)
     val = subprocess.call(["diff","--ignore-all-space", foutput, freference])
@@ -73,11 +73,6 @@ def run_all():
         if test_set != test_sets[-1]:
             print()
     print("\nTotal" + '.' * 21 + "[{}p]".format(total))
-
-
-# run_test("T3.11.Lecture-lexer","lecture01")
-# run_test("T3.1","T3.1.1")
-# run_test_group("T3.1")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='FLA project checker')
